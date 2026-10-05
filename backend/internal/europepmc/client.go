@@ -49,7 +49,7 @@ func (c *Client) Search(ctx context.Context, query string, limit int) ([]models.
 		limit = 10
 	}
 
-	searchURL := fmt.Sprintf("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%s&format=json&pageSize=%d&resultType=core&sort=P_PD_D%%20desc",
+	searchURL := fmt.Sprintf("https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%s&format=json&pageSize=%d&resultType=core",
 		url.QueryEscape(query), limit)
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, searchURL, nil)
