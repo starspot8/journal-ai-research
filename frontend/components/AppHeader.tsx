@@ -13,7 +13,10 @@ export const AppHeader: React.FC = () => {
             <path d="M12 13v3" />
           </svg>
           <span>Journal AI Research</span>
-          <span className="brand-badge">V1 Science</span>
+          <span className="brand-badge-kmn">
+            <span className="kmn-indicator-dot" />
+            KMN Clinical Science
+          </span>
         </Link>
 
         <nav className="nav-links">

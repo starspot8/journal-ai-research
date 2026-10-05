@@ -22,10 +22,15 @@ func GenerateResearchReport(query string, articles []models.Article) ([]byte, er
 	pdf.Cell(0, 10, "Journal AI Research")
 	pdf.Ln(7)
 
-	pdf.SetFont("Helvetica", "", 11)
+	pdf.SetFont("Helvetica", "B", 11)
+	pdf.SetTextColor(14, 165, 233) // Accent Blue
+	pdf.Cell(0, 6, "KMN Clinical Science Edition")
+	pdf.Ln(6)
+
+	pdf.SetFont("Helvetica", "", 10)
 	pdf.SetTextColor(107, 114, 128) // Text Secondary (#6B7280)
-	pdf.Cell(0, 7, "Scientific Literature Research Report")
-	pdf.Ln(10)
+	pdf.Cell(0, 6, "Scientific Literature Research Report • PubMed | Europe PMC | Crossref")
+	pdf.Ln(9)
 
 	// Divider line
 	pdf.SetDrawColor(229, 231, 235) // Border (#E5E7EB)
