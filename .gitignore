@@ -1,0 +1,34 @@
+# Binaries and builds
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go
+backend/server
+
+# Node & Next.js
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Logs & Environment
+*.log
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker & DB
+journal-ai-postgres-data/
+
+# OS
+.DS_Store
+Thumbs.db

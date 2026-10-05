@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: journal-ai-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: journal_user
+      POSTGRES_PASSWORD: journal_password
+      POSTGRES_DB: journal_ai_db
+    ports:
+      - "127.0.0.1:5435:5432"
+    volumes:
+      - journal-ai-postgres-data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U journal_user -d journal_ai_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - journal-ai-net
+
+volumes:
+  journal-ai-postgres-data:
+    name: journal-ai-postgres-data
+
+networks:
+  journal-ai-net:
+    name: journal-ai-net
